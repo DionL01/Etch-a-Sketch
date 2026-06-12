@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(219, 219, 214);
+    margin: 0px;
+}
+
+
+h1{
+    background-color: #1d4f2f;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    color: #45cf77;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    font-size: 16px;
+    align-self: stretch;
+}
+
+button{
+    background-color: #1d4f2f;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    color: #45cf77;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+#container {
+	border:1px solid #000;
+    height: 750px;
+    width: 750px;
+    font-size: 0;
+}
+
+.grid {
+    background-color: white;
+    display: inline-block;
+}
+
+
+.gridHovered{
+    background-color: green;
+    display: inline-block;
+}
