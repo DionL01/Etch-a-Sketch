@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Etch-a-Sketch !</h1>
+    <div>
+    <div id="container">
+       
+    </div>
+    </div>
+    <button id="selector">Grid-Size</button>
+</body>
+
+
+
+<script>
+/* create a sketch grid*/ 
+
+const container = document.getElementById('container');
+function createGrid(n){ 
+    for(let row=0; row<n; row++){
+        for(let column=0; column<n; column++){
+            let pixel=document.createElement ("div")
+                pixel.classList.add("grid") 
+                pixel.style.width=`${750/n}px`;
+                pixel.style.height= `${750/n}px`;
+                container.appendChild(pixel)
+        }
+    }
+}
+createGrid(16)
+
+
+/* Grid Size selection - > doesnt work yet with invalid string input*/
+
+const button = document.getElementById("selector");
+
+let selectGridSize = function selectGridSize(){
+    let gridSize = prompt("Choose your grid size!", 35);
+
+        if (gridSize === null) {
+            container.innerHTML = "";
+            return createGrid(16);
+        } else if (gridSize === "") {
+            container.innerHTML = "";
+            return createGrid(16);
+        } else if (gridSize < 1 || gridSize > 100) {
+            container.innerHTML = "";
+            return createGrid(16);
+        } else {
+            container.innerHTML = "";
+            return createGrid(`${gridSize}`) ;
+        }
+}
+
+button.addEventListener("click", selectGridSize)
+
+
+
+/* Darkening effect*/
+
+container.addEventListener("mouseover", function(darken) {
+    if (darken.target.classList.contains("grid") || darken.target.classList.contains("gridHovered")) {
+
+        darken.target.classList.add("gridHovered");
+
+        let opacity = parseFloat(darken.target.style.opacity) || 0;
+        opacity += 0.1;
+
+        if (opacity > 1) opacity = 1;
+
+        darken.target.style.opacity = opacity;
+    }
+});
+
+</script>
+</html>
